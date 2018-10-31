@@ -11,7 +11,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 
 public class MapActivity extends AppCompatActivity implements MapboxFragment.OnFragmentInteractionListener {
 
-    final String MAPBOX_ACCESS_TOKEN = "YOUR_ACCESS_TOKEN";
+    final String MAPBOX_ACCESS_TOKEN = "pk.mapwize";
     MapboxFragment mapboxFragment;
 
     @Override

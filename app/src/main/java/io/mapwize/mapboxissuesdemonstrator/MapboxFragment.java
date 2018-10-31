@@ -11,11 +11,15 @@ import android.view.ViewGroup;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 
+import io.mapwize.mapwizeformapbox.MapOptions;
+import io.mapwize.mapwizeformapbox.MapwizePlugin;
+
 
 public class MapboxFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private MapView mapView;
+    private MapwizePlugin mapwizePlugin;
 
     public MapboxFragment() {
 
@@ -42,6 +46,7 @@ public class MapboxFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         loadViews(view);
         mapView.onCreate(savedInstanceState);
+        mapwizePlugin = new MapwizePlugin(mapView, new MapOptions());
         mapView.getMapAsync(mapboxMap -> mListener.onFragmentReady(mapboxMap));
     }
 
@@ -67,6 +72,13 @@ public class MapboxFragment extends Fragment {
         super.onStart();
         mapView.onStart();
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mapView.onStop();
+    }
+
 
     @Override
     public void onResume() {

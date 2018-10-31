@@ -3,12 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MapboxFragment">
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:mapbox_uiLogo="false"
+        app:mapbox_uiAttribution="false"
+        app:mapbox_styleUrl="http://outdoor.mapwize.io/styles/mapwize/style.json?key=YOUR_API_KEY">
 
     </com.mapbox.mapboxsdk.maps.MapView>
 
